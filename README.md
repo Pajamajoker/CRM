@@ -3,7 +3,7 @@ NOTE!
 1)This CRM application is just an extensively demonstrative application,coded for the purpose of showcasing the advantages and use cases of a CRM in various business sectors.
 2)I've created the CRM for a Financial Services Company such as BajajFinServ OR loan lending financial Banks
 3)The codebase can be modified to serve as CRM for businesses of different sectors.
-
+4)This project is a part of my college curriculum,which uses JSP(now considered as obsolete technology)
 I've created a CRM tool web application. For this application I've used MYSQL to store the data and for the user interface I have used JSP and HTML. 
 Customer relationship management (CRM) is a combination of people, processes, and technology that seeks to provide understanding of customer needs, to support business strategy, and to build long-term relationships with customers. 
 
@@ -53,10 +53,11 @@ SHORTCOMINGS OF THE PROJECT
 JSPs should primarily be used only as "views" and most of the backend processing should be done on java servelets.
 2)Some security flaws exist
 3)Validations at a few places.
+4)Outdated technology is used.
 
 CODE REMARKS
-I will try and correct the code as much as possible,however the JSP pages seem to be working fine on small scale,so Java servlets are not needed for small scale purposes.
-Will keep updating the code...
+I will try and correct the code as much as possible,however the JSP pages seem to be working fine on small scale,so explicit Java servlets are not needed for small scale purposes.
+This technology is now severely outdated.
 
 
 
