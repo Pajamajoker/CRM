@@ -1,5 +1,7 @@
 # CRM 
 NOTE!
+
+
 1.This CRM application is just an extensively demonstrative application,coded for the purpose of showcasing the advantages and use cases of a CRM in various business sectors.
 
 2.I've created the CRM for a Financial Services Company such as BajajFinServ OR loan lending financial Banks
