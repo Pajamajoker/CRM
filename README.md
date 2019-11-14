@@ -1,11 +1,17 @@
 # CRM 
 NOTE!
-1)This CRM application is just an extensively demonstrative application,coded for the purpose of showcasing the advantages and use cases of a CRM in various business sectors.
-2)I've created the CRM for a Financial Services Company such as BajajFinServ OR loan lending financial Banks
-3)The codebase can be modified to serve as CRM for businesses of different sectors.
-4)This project is a part of my college curriculum,which uses JSP(now considered as obsolete technology)
+1.This CRM application is just an extensively demonstrative application,coded for the purpose of showcasing the advantages and use cases of a CRM in various business sectors.
+
+2.I've created the CRM for a Financial Services Company such as BajajFinServ OR loan lending financial Banks
+
+3.The codebase can be modified to serve as CRM for businesses of different sectors.
+
+4.This project is a part of my college curriculum,which uses JSP(now considered as obsolete technology)
+
+
 I've created a CRM tool web application. For this application I've used MYSQL to store the data and for the user interface I have used JSP and HTML. 
 Customer relationship management (CRM) is a combination of people, processes, and technology that seeks to provide understanding of customer needs, to support business strategy, and to build long-term relationships with customers. 
+
 
 FUNCTIONALITIES 
 1.	An up to date database of customers, probable leads, available products is maintained.
