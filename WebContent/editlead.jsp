@@ -32,24 +32,25 @@ String pid=request.getParameter("pid");
 int status=Integer.parseInt(request.getParameter("optradio"));
 int nature=Integer.parseInt(request.getParameter("nature"));
 String nextaction=request.getParameter("nextaction");
-String nextactiondate="2019-09-20";
+String nextactiondate=request.getParameter("date");
 String Type=request.getParameter("pid");
+int CreditCat=Integer.parseInt(request.getParameter("creditcat"));
 int TypeID=0;
-if(Type.equals("Home"))
+if(Type.equals("Home Loan"))
 {
 	TypeID=1;
 }
-else if(Type.equals("Education"))
+else if(Type.equals("Education Loan"))
 {
 	TypeID=2;
 }
-else if(Type.equals("Vehicle"))
+else if(Type.equals("Vehicle Loan"))
 {
 	TypeID=1;
 }
 int LeadID=(Integer)session.getAttribute("LeadID");
 
-String sql=("update leads set FirstName=?,LastName=?,Email=?,Address=?,PhoneNum=?,Status=?,Nature=?,Requirement=?,Next_action=?,Next_action_date=?,TypeID=? where LeadID=?");
+String sql=("update leads set FirstName=?,LastName=?,Email=?,Address=?,PhoneNum=?,Status=?,Nature=?,Requirement=?,Next_action=?,Next_action_date=?,TypeID=?,CreditCat=? where LeadID=?");
 Class.forName(driverName);
 con = DriverManager.getConnection(url, user, dbpsw);
 ps = con.prepareStatement(sql);
@@ -65,11 +66,8 @@ ps.setInt(7,nature);
 ps.setString(9,nextaction);
 ps.setString(10,nextactiondate);
 ps.setInt(11,TypeID);
-ps.setInt(12,LeadID);
-
-
-
-
+ps.setInt(13,LeadID);
+ps.setInt(12,CreditCat);
 
 int i= ps.executeUpdate();
 

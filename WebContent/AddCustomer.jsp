@@ -8,6 +8,50 @@
   
 </head>
 <body>
+
+<script>
+
+function check()
+{
+	
+	alert(document.getElementById("sel1").value);
+	if(document.getElementById("sel1").value==="1")
+		{
+			if(document.getElementById("principal").value>=1000000 && document.getElementById("principal").value<=20000000)
+			{
+				document.getElementById("mainform").submit();
+			}
+			else{
+				document.getElementById("demo").innerHTML="Category and principal do not match";
+				return false;
+			}
+		}
+	if(document.getElementById("sel1").value="2")
+	{
+		if(document.getElementById("principal").value>=1000000 && document.getElementById("principal").value<=8000000)
+		{
+			document.getElementById("mainform").submit();
+		}
+		else{
+			document.getElementById("demo").innerHTML="Category and principal do not match";
+			return false;
+		}
+	}
+	if(document.getElementById("sel1").value="3")
+	{
+		if(document.getElementById("principal").value>=1000000 && document.getElementById("principal").value<=5000000)
+		{
+			document.getElementById("mainform").submit();
+		}
+		else{
+			document.getElementById("demo").innerHTML="Category and principal do not match";
+			return false;
+		}
+	}
+}
+</script>
+
+
 <%@include file="navbar.jsp" %>
 <%/*response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");// to not cache the secure pages
     if(session.getAttribute("navbar_var")==null)
@@ -68,39 +112,32 @@
     </div>
     <div class="form-group">
       <label for="pid">Product interested in:</label>
-      <input type="pid" class="form-control" id="pid" placeholder="Enter Product ID" name="pid"  readonly value=<% 
+      <input type="pid" class="form-control" id="pid" placeholder="Enter Product ID" name="pid"  readonly value="<% 
       	int i=TypeID;
 		if(i==1)
 		out.println("Home Loan");
 		else if(i==2)
 		out.println("Vehicle Loan");
 		else if(i==3)
-		out.println("Education Loan"); %>>
+		out.println("Education Loan"); %>">
     </div>
     
       <div class="form-group">
       <label for="sel1">Credit Score Category:</label>
-      <select class="form-control" name="nature" id="sel1" readonly value=<%
-      	int k=CreditCat;
-		if(k==1)
-		out.println("Category 1");
-		else if(k==2)
-		out.println("Category 2");
-		else if(k==3)
-		out.println("Category 3"); %>>
-        <option value="1">Category 1</option>
-        <option value="2">Category 2 </option>
-        <option value="3">Category 3</option>
+      <select class="form-control" name="creditcat" id="sel1" readonly disabled>
+        <option value="1" <%if(CreditCat==1){ %> selected <%} %>  >Category 1</option>
+        <option value="2" <%if(CreditCat==2){ %> selected <%} %>  >Category 2 </option>
+        <option value="3" <%if(CreditCat==3){ %> selected <%} %>  >Category 3</option>
       </select></div>
       
       <div class="form-group">
       <label for="principal">Prinicpal Amount:</label>
-      <input class="form-control" id="principal" placeholder="Enter Principal Amount" name="principal" >
+      <input class="form-control" pattern="\d*" min="0" id="principal" placeholder="Enter Principal Amount" name="principal" >
     </div>
     
     <div class="form-group">
       <label for="duration">Duration ( IN YEARS ) :</label>
-      <input  class="form-control" id="duration" placeholder="Enter duration in Years" name="duration" >
+      <input  class="form-control" id="duration" pattern="\d*" min="0" placeholder="Enter duration in Years" name="duration" >
     </div>
     
 
@@ -108,6 +145,7 @@
 	<button type="submit" class="btn btn-default" form="mainform" >Add as Customer</button>&nbsp;&nbsp;&nbsp;&nbsp;
    
 </div> 
+  <script>document.getElementById("leads").setAttribute("class","active");</script>
 
 </body>	
 </html>

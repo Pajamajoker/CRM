@@ -5,9 +5,111 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   
 </head>
 <body>
+<script>
+
+
+
+function validate(){
+	//alert("hello");
+	document.getElementById("first").innerHTML="";
+	document.getElementById("last").innerHTML="";
+	document.getElementById("phno").innerHTML="";
+	document.getElementById("emailid").innerHTML="";
+	document.getElementById("add").innerHTML="";
+	var fname=document.myform.firstname.value;
+	var lname=document.myform.lastname.value;
+	var email=document.myform.email.value;
+	var phoneno=document.myform.phoneno.value;
+	var address=document.myform.address.value;
+	fname=validatename(fname);
+	lname=validatelame(lname);
+	email=validateemail(email);
+	phoneno=validatepno(phoneno);
+	address=validateadd(address);
+	if(fname==true&&lname==true&&email==true&&phoneno==true&&address==true)
+	{
+		//window.location.href="editlead.jsp";
+		$("#myform").submit();
+
+	}
+	else
+		return false;
+		
+}
+function validateadd(address)
+{
+	if(address==null||address=="")
+	{
+		document.getElementById("add").innerHTML="Please fill out";
+		return false;
+	}
+	else
+		return true;
+}
+function validatename(fname){
+	if(fname==null||fname=="")
+	{
+		document.getElementById("first").innerHTML="Please fill out";
+		return false;
+	}
+	else if (!isNaN(fname)){
+		  document.getElementById("first").innerHTML="Enter alphabetic value only";
+		  console.log(first);
+		  return false;
+		}
+	else 
+		return true;
+	
+}
+function validatelame(lname){
+	if(lname==null||lname=="")
+	{
+		document.getElementById("last").innerHTML="Please fill out";
+		return false;
+	}
+	else if (!isNaN(lname)){
+		  document.getElementById("last").innerHTML="Enter alphabetic value only";
+		  return false;
+		}
+	else 
+		return true;
+}
+function validateemail(email){
+	if(email==null||email=="")
+	{
+		document.getElementById("emailid").innerHTML="Please fill out";
+		return false;
+	}
+	else
+	if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
+	{
+		document.getElementById("emailid").innerHTML="You have entered an invalid email address!";
+	    return (false);
+	}
+	else 
+		return true;
+}
+function validatepno(phoneno){
+	if(phoneno==null||phoneno=="")
+	{
+		document.getElementById("phno").innerHTML="Please fill out";
+		return false;
+	}
+	else
+	if(phoneno.length!=10 && isNaN(phoneno))
+	{
+		document.getElementById("phno").innerHTML="Enter valid 10 digit number only";
+		  return false;
+	}
+	else 
+		return true;	
+}
+	
+</script>
 <%@include file="navbar.jsp" %>
 <%/*response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");// to not cache the secure pages
     if(session.getAttribute("navbar_var")==null)
@@ -57,26 +159,31 @@
 <div class="container" id="container">
   <h2><%="Lead Information"	%></h2>
   
-  <form action="editlead.jsp" method="post" id="mainform">
+  <form action="editlead.jsp" method="post" id="myform" name="myform" >
     <div class="form-group">
       <label for="firstname">First Name:</label>
-      <input class="form-control" id="firstname" placeholder="Enter firstname" name="firstname" readonly value="<%=FirstName%>" >
+      <input class="form-control" id="firstname" placeholder="Enter firstname" name="firstname" readonly value="<%=FirstName%>" required >
+      <span id="first" style="color:red"></span>
     </div>
     <div class="form-group">
       <label for="lastname">Last Name:</label>
-      <input  class="form-control" id="lastname" placeholder="Enter email" name="lastname" readonly value="<%=LastName%>">
+      <input  class="form-control" id="lastname" placeholder="Enter email" name="lastname" readonly value="<%=LastName%>" required>
+      <span id="last" style="color:red"></span>
     </div>
     <div class="form-group">
       <label for="address">Address:</label>
-      <input  class="form-control" id="address" placeholder="Enter address" name="address" readonly value="<%=Address%>">
+      <input  class="form-control" id="address" placeholder="Enter address" name="address" readonly value="<%=Address%>" required>
+      <span id="add" style="color:red"></span>
     </div>
     <div class="form-group">
       <label for="phoneno">Phone no:</label>
-      <input class="form-control" id="phoneno" placeholder="Enter phoneno" name="phoneno" readonly value="<%=PhoneNum%>">
+      <input class="form-control" id="phoneno" placeholder="Enter phoneno" name="phoneno" readonly value="<%=PhoneNum%>" required>
+       <span id="phno" style="color:red"></span>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input  class="form-control" id="email" placeholder="Enter email" name="email" readonly value="<%=Email%>">
+      <input  class="form-control" id="email" placeholder="Enter email" name="email" readonly value="<%=Email%>" required>
+       <span id="emailid" style="color:red"></span>
     </div>
     <div class="form-group">
       <label for="req">Requirement:</label>
@@ -84,14 +191,14 @@
     </div>
     <div class="form-group">
       <label for="pid">Product interested in:</label>
-      <input  class="form-control" id="pid" placeholder="Enter Product ID" name="pid"  readonly value=<% 
+      <input  class="form-control" id="pid" placeholder="Enter Product ID" name="pid"  readonly value="<% 
       	int i=TypeID;
 		if(i==1)
 		out.println("Home Loan");
 		else if(i==2)
 		out.println("Vehicle Loan");
 		else if(i==3)
-		out.println("Education Loan"); %>>
+		out.println("Education Loan"); %>">
     </div>
     
     <label>Status:</label>
@@ -102,38 +209,26 @@
     </div>
     <div class="form-group">
       <label for="sel1">Nature:</label>
-      <select class="form-control" name="nature" id="sel1" readonly value=<%
-      	int j=Nature;
-		if(j==1)
-		out.println("Hot");
-		else if(j==2)
-		out.println("Warm");
-		else if(j==3)
-		out.println("Cold"); %>>
-        <option value="1">Hot</option>
-        <option value="2">Warm </option>
-        <option value="3">Cold</option>
+      <select class="form-control" name="nature" id="sel1" readonly >
+        <option value="1" <%if(Nature==1){ %> selected <%} %>  >Hot</option>
+        <option value="2" <%if(Nature==2){ %> selected <%} %>  >Warm </option>
+        <option value="3" <%if(Nature==3){ %> selected <%} %>  >Cold</option>
       </select></div>
       <div class="form-group">
       <label for="sel1">Credit Score Category:</label>
-      <select class="form-control" name="nature" id="sel1" readonly value=<%
-      	int k=CreditCat;
-		if(k==1)
-		out.println("Category 1");
-		else if(k==2)
-		out.println("Category 2");
-		else if(k==3)
-		out.println("Category 3"); %>>
-        <option value="1">Category 1</option>
-        <option value="2">Category 2 </option>
-        <option value="3">Category 3</option>
+      <select class="form-control" name="creditcat" id="sel1" readonly>
+        <option value="1" <%if(CreditCat==1){ %> selected <%} %>  >Category 1</option>
+        <option value="2" <%if(CreditCat==2){ %> selected <%} %>  >Category 2 </option>
+        <option value="3" <%if(CreditCat==3){ %> selected <%} %>  >Category 3</option>
       </select></div>
+      	
     <div class="form-group">
       <label for="nextaction">Next action:</label>
-      <input type="nextaction" class="form-control" id="nextaction" placeholder="Enter next action" name="nextaction" readonly value=<%=Next_action %>>
-      <label for="nextactiondate" >Next action date:</label>
-                <div class='input-group date' id='datetimepicker1' >
-                    <input type='text' class="form-control" readonly value=<%=Next_action_date %>>
+      <input type="text" class="form-control" id="nextaction" placeholder="Enter next action" name="nextaction">
+     
+      <label for="nextactiondate">Next action date:</label>
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type="date" class="form-control" name="date"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -221,7 +316,8 @@
      btn.setAttribute("class","btn btn-default");
      btn.setAttribute("id","submit");
     // btn.setAttribute("onclick","location.href = 'editlead.jsp?Id="   '");
-    btn.setAttribute("onclick","location.href = 'editlead.jsp'");
+   // btn.setAttribute("onclick","location.href = 'editlead.jsp'");
+      btn.setAttribute("onclick","validate()");
     btn.setAttribute("form","mainform");
 
      if(flag===0)

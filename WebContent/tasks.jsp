@@ -19,9 +19,28 @@ rs = ps.executeQuery();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> <!--//bootstrap link   -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+  
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> <!--//bootstrap link   -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
 </head>
+<style>
+.dataTables_filter
+{
+display: none;
+}
 
+
+{
+display: none;
+
+}
+}
+</style>
 <body>
 
 <div class="container">
@@ -34,12 +53,13 @@ rs = ps.executeQuery();
   <p>Type something in the input field to search the table for first names, last names or emails:</p>  
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered table-striped" id="maintable">
     <thead>
       <tr>
-      <th>LeadID</th>
+        <th>LeadID</th>
+        <th>Task Name</th>
       	<th>Task</th>
-        <th>Start Date</th>
+        <th>Deadline</th>
         <th>Status</th>
        
       </tr>
@@ -51,6 +71,7 @@ rs = ps.executeQuery();
 	<tr>
 	 <%long  taskid=rs.getInt("TaskID"); %>
 		<td id="taskid"><%=rs.getInt("TaskID")%></td>
+		<td><%=rs.getString("Name")%></td>
 		<td><%=rs.getString("Task") %></td>
 		<td><%=rs.getString("Start_date") %></td>
 		<td><%int k=rs.getInt("Status");
@@ -71,5 +92,10 @@ rs = ps.executeQuery();
 </body>
 <script>document.getElementById("tasks").setAttribute("class","active");
 </script>
-
+</script>
+<script>
+$(document).ready(function() {
+    $('#maintable').DataTable();
+} );
+</script>
 </html>

@@ -21,7 +21,7 @@
 
 	Class.forName(driverName);
 	con = DriverManager.getConnection(url, user, dbpsw);
-	String sql="update tasks set Status=2 where TaskID=?" ;
+	String sql="update tasks set Status=2 ,due=0 where TaskID=?" ;
 	ps = con.prepareStatement(sql);
 	ps.setInt(1,Integer.parseInt(request.getParameter("Id")));// 
 	int i = ps.executeUpdate();

@@ -62,19 +62,24 @@ ps.setInt(13,CreditCat);
 
 
 
+try{
 
+	int i= ps.executeUpdate();
+	if(i!=0)
+	
+	{ 
+	//out.println("Data is successfully inserted!");
+	//response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+		response.sendRedirect("leads.jsp");
+	}
+	else
+	{
+	
+	}
 
-int i= ps.executeUpdate();
-
-if(i!=0)
-
-{ 
-//out.println("Data is successfully inserted!");
-//response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
-	response.sendRedirect("leads.jsp");
 }
-else
+catch(SQLException e)
 {
-	out.println("err");
+	response.sendRedirect("LeadsError.jsp");
 }
 %>

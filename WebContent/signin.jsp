@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>CRM::Login</title>
+	<title>CRM::Emp Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -36,7 +36,7 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
 				<form class="login100-form validate-form" method="post" action="login.jsp">
 					<span class="login100-form-title p-b-33">
-						Account Login
+						Employee Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -57,24 +57,7 @@
 						</button>
 					</div>
 
-					<div class="text-center p-t-45 p-b-4">
-						<span class="txt1">
-							Forgot
-						</span>
-
-						<a href="#" class="txt2 hov1">
-							Username / Password?
-						</a>
-					</div>
-
 					<div class="text-center">
-						<span class="txt1">
-							Create an account?
-						</span>
-
-						<a href="#" class="txt2 hov1">
-							Sign up
-						</a>
 					</div>
 				</form>
 			</div>

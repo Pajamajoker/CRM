@@ -19,7 +19,11 @@
   <h2>Add Task</h2>
   <form action="addtasks_middleware.jsp" method="post">
     <div class="form-group">
-      <label for="task">Enter Task:</label>
+      <label for="task">Task Name</label>
+      <input type="text" class="form-control" id="taskname" placeholder="Enter task" name="taskname">
+    </div>
+    <div class="form-group">
+      <label for="task">Task Description:</label>
       <input type="text" class="form-control" id="task" placeholder="Enter task" name="task">
     </div>
     <div class="form-group">

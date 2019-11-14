@@ -120,7 +120,7 @@ else
 		ps.setFloat(6,int_rate);
 		rs = ps.executeQuery();
 		
-		response.sendRedirect("leads.jsp");
+		response.sendRedirect("addcustomerlogin.jsp?Id="+CustomerID);
 	}
 		
 
