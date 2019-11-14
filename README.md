@@ -57,11 +57,18 @@ SCREENSHOTS:
 
 
 SHORTCOMINGS OF THE PROJECT
-1)Outdated technology is used.
-2) As I was coding this application using JSP for the first time, I realised half-way through the project how severly flawed the codebase is. I have coded the entire project in JSP without the use of explicit Java Servelets. This is a bad practice of coding since
+
+1.Outdated technology is used.
+
+
+2. As I was coding this application using JSP for the first time, I realised half-way through the project how severly flawed the codebase is. I have coded the entire project in JSP without the use of explicit Java Servelets. This is a bad practice of coding since
 JSPs should primarily be used only as "views" and most of the backend processing should be done on java servelets.
-3)Some security flaws exist
-4)Validations at a few places.
+
+
+3.Some security flaws exist
+
+
+4.Validations at a few places.
 
 
 
