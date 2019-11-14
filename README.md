@@ -35,6 +35,19 @@ FILE DESCRIPTIONS
 2) The folder WebContent has all the .jsp files
 3) All the Frontend Resources are in the "Resources" Folder
 
+SCREENSHOTS:
+
+![image](https://user-images.githubusercontent.com/46530662/68836190-ca50fb80-06df-11ea-9dee-b233e4126cc6.png)
+
+![image](https://user-images.githubusercontent.com/46530662/68836317-10a65a80-06e0-11ea-9227-b13266f5b228.png)
+
+![image](https://user-images.githubusercontent.com/46530662/68836344-24ea5780-06e0-11ea-8a80-78f851e14b0b.png)
+
+![image](https://user-images.githubusercontent.com/46530662/68836386-3df30880-06e0-11ea-9e59-374c99877205.png)
+
+![image](https://user-images.githubusercontent.com/46530662/68836364-33387380-06e0-11ea-80c3-3e737c74572e.png)
+
+
 SHORTCOMINGS OF THE PROJECT
 1) As I was coding this application using JSP for the first time, I realised half-way through the project how severly flawed the codebase is. I have coded the entire project in JSP without the use of explicit Java Servelets. This is a bad practice of coding since
 JSPs should primarily be used only as "views" and most of the backend processing should be done on java servelets.
@@ -44,4 +57,6 @@ JSPs should primarily be used only as "views" and most of the backend processing
 CODE REMARKS
 I will try and correct the code as much as possible,however the JSP pages seem to be working fine on small scale,so Java servlets are not needed for small scale purposes.
 Will keep updating the code...
+
+
 
