@@ -8,12 +8,7 @@ NOTE!
 
 3.The codebase can be modified to serve as CRM for businesses of different sectors.
 
-4.This project is a part of my college curriculum,which uses JSP(now considered as obsolete technology)
-
-
-I've created a CRM tool web application. For this application I've used MYSQL to store the data and for the user interface I have used JSP and HTML. 
-Customer relationship management (CRM) is a combination of people, processes, and technology that seeks to provide understanding of customer needs, to support business strategy, and to build long-term relationships with customers. 
-
+4.This project is a part of my college curriculum,which uses JSPs and Java servlets.
 
 FUNCTIONALITIES 
 1.	An up to date database of customers, probable leads, available products is maintained.
@@ -56,19 +51,6 @@ SCREENSHOTS:
 ![image](https://user-images.githubusercontent.com/46530662/68836364-33387380-06e0-11ea-80c3-3e737c74572e.png)
 
 
-SHORTCOMINGS OF THE PROJECT
-
-1.Outdated technology is used.
-
-
-2. As I was coding this application using JSP for the first time, I realised half-way through the project how severly flawed the codebase is. I have coded the entire project in JSP without the use of explicit Java Servelets. This is a bad practice of coding since
-JSPs should primarily be used only as "views" and most of the backend processing should be done on java servelets.
-
-
-3.Some security flaws exist
-
-
-4.Validations at a few places.
 
 
 
