@@ -1,3 +1,5 @@
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Pajamajoker&repoCRM)](https://github.com/Pajamajoker/CRM)
+
 # Customer Relationship Management Tool for a financial services firm
 
 ### Description:
